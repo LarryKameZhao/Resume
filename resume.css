@@ -1,7 +1,6 @@
 body
 {
-	background: black;
-	color: white;
+	background: #EFEFEF;
 	margin: 0;
 }
 a
@@ -9,9 +8,28 @@ a
 	text-decoration: none;
 	color: inherit;
 }
+h1,h2,h3,h4,h5,h6,p
+{
+	margin: 0;
+	padding: 0;
+}
+hr
+{
+	height: 0;
+	border: none;
+	border-top: 1px solid #dedede;
+}
 .topNavBar
 {
-	padding: 20px 16px 20px 16px;
+	padding: 20px 0px 20px 0px;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.topNavBar-inner
+{
+	padding: 0 16px;
 }
 .clearFix:after
 {
@@ -20,12 +38,12 @@ a
 	content: '';
 
 }
-.topNavBar >nav
+.topNavBar nav
 {
 	padding-top: 7px;
 	padding-bottom: 0px;
 }
-.topNavBar >nav >ul>li>a
+.topNavBar nav >ul>li>a
 {
 	font-size: 12px;
 	color: #b7b7b7;
@@ -37,20 +55,20 @@ a
 	padding-bottom: 5px;
 
 }
-.topNavBar >nav >ul 
+.topNavBar nav >ul 
 {
 	list-style: None;
 	margin: 0;
 	padding: 0;
 }
-.topNavBar >nav >ul >li
+.topNavBar nav >ul >li
 {
 	float: left;
 	margin-left: 17px;
 	margin-right: 17px;
 
 }
-.topNavBar>nav>ul>li>a:hover
+.topNavBar nav>ul>li>a:hover
 {
 	border-bottom: 3px solid #e06567;
 
@@ -71,4 +89,70 @@ a
 .topNavBar .logo .card
 {
 	color: #9a9da2;
+}
+.banner
+{
+	height: 515px;
+	background-image:url(./img/rs-cover.jpg);
+	background-position: center center;
+	background-size: cover;
+}
+.banner .mask
+{
+	height: 515px;
+	background-color: rgba(0,0,0,0.7);
+}
+
+.userCard
+{
+	border: 2px solid red;
+	max-width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FFFFFF;
+}
+
+.userCard .welcome
+{
+	background: #E6686A;
+	color: white;
+	display: inline-block;
+	padding:  4px 15px;
+	position:relative;
+	margin-bottom: 10px;
+
+}
+.userCard .welcome .triangle
+{
+	display: block;
+	border: 10px solid transparent;
+	border-left-color: #E6686A;
+	border-top-width: 0;
+	left: 4px;
+	top: 100%;
+	position: absolute;
+
+}
+.userCard .picture
+{
+	float: left;
+}
+
+.userCard .text
+{
+	float: left;
+	margin-left:70px;
+	width: 400px;
+}
+.userCar .text h1
+{
+	margin-top: 18px;
+}
+.userCard .text hr
+{
+	margin: 20px 0;
+}
+.userCard .pictureAndText
+{
+	padding: 50px;
 }
