@@ -5,6 +5,16 @@
 	<meta charset="utf-8">
 	<title>taiji</title>
 	<style type="text/css">
+
+		@keyframes spin {
+			from{
+				transform: rotate(0deg);
+			}
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
 		#yinyang
 		{
 			width: 200px;
@@ -15,6 +25,10 @@
 			background: linear-gradient(to bottom, #ffffff 0%,#ffffff 50%,#000000 51%,#000000 100%);
 			position: relative;
 			margin: 100px auto;
+			animation-duration: 3s;
+			animation-name: spin;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
 
 		}
 		#yinyang::before
@@ -43,6 +57,7 @@
 			right: 0;
 			border: 40px solid white;
 		}
+		
 	</style>
 </head>
 <body>
