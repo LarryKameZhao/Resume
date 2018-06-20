@@ -8,8 +8,8 @@ a
 	text-decoration: none;
 	color: inherit;
 }
-h1,h2,h3,h4,h5,h6,p
-{
+
+*{
 	margin: 0;
 	padding: 0;
 }
@@ -105,7 +105,7 @@ hr
 
 .userCard
 {
-	border: 2px solid red;
+	
 	max-width: 940px;
 	margin-left: auto;
 	margin-right: auto;
@@ -155,4 +155,50 @@ hr
 .userCard .pictureAndText
 {
 	padding: 50px;
+}
+
+.userCard dl dt,
+.userCard dl dd
+{
+	float: left;
+	padding: 5px 0;
+}
+.userCard dl dt
+{
+	width: 30%;
+
+	font-weight: bold;
+}
+
+.userCard dl dd
+{
+	width: 70%;
+	color: #9da0a7;
+}
+.userCard > footer.media
+{
+	background: #E6686A;
+	text-align: center;
+}
+
+.userCard svg
+{
+	width: 30px;
+	height: 30px;
+	fill: white;
+	vertical-align: top;
+}
+.userCard >footer.media >a
+{
+	
+	display: inline-block;
+	border-radius: 50%;
+	width: 40px;
+	padding: 5px 0;
+	line-height: 30px;
+	margin:16px;
+}
+.userCard >footer.media >a:hover
+{
+	background: #CF5D5F;
 }
