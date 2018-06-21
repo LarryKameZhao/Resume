@@ -13,6 +13,16 @@ a
 	margin: 0;
 	padding: 0;
 }
+h1,h2,h3,h4,h5,h6
+{
+	font-weight:normal;
+}
+
+ul,ol
+{
+	list-style: none;
+}
+
 hr
 {
 	height: 0;
@@ -110,8 +120,12 @@ hr
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #FFFFFF;
+	transition: box-shadow 0.3s;
 }
-
+.userCard:hover
+{
+	box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+}
 .userCard .welcome
 {
 	background: #E6686A;
@@ -201,4 +215,99 @@ hr
 .userCard >footer.media >a:hover
 {
 	background: #CF5D5F;
+}
+
+body>main{
+	margin-top: -340px;
+
+}
+
+
+body>main .downloadResume
+{
+	font-size: 14px;
+	line-height: 15px;
+	padding: 21px 55px;
+	border: 1px solid #CDCFD1;
+	display: inline-block;
+	background: #EFEFEF;
+	border-radius: 2px;
+	color: #3d4451;
+	font-weight: bold;
+	margin: 32px 0;
+	transition: box-shadow 0.3s;
+
+}
+body>main .downloadResume:hover
+{
+	box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.5);
+}
+
+body>main .resumeWrapper
+{
+	text-align: center;
+}
+
+.selfIntroduction
+{
+	max-width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-family: kai;
+	line-height: 1.8;
+	font-size: 18px;
+}
+
+section.skills
+{
+	max-width: 940px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 60px;
+}
+
+section.skills>h2
+{
+	text-align: center;
+	color: #3d4451;
+	font-size: 34px;
+	line-height: 1.2;
+	font-weight: 600;
+}
+
+section.skills h3
+{
+	font-size: 14px;
+	line-height: 1.1;
+	padding-right: 40px;
+}
+
+.skills >ol
+{
+	background: white;
+	box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.5);
+	padding: 42px 50px 10px;
+}
+
+section.skills>ol>li
+{
+	float: left;
+	width: 50%;
+}
+
+section.skills  .progressBar 
+{
+	height: 5px;
+	background: #FAE1E1;
+	border-radius: 2px;
+	margin: 4px 0 40px;
+		
+}
+section.skills .progressBar .progress
+{
+	height: 100%;
+	width: 70%;
+	background: #E6686A;
+	border-radius: 2px;
 }
