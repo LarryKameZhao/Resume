@@ -88,7 +88,7 @@
 
 	</div>
 	<p style="text-align: center" class="resumeWrapper">
-		<a href="./resume1.doc" class="downloadResume" target="_blank" download>点击下载简历</a>
+		<a href="./resume1.pdf" class="downloadResume" target="_blank" download>点击下载简历</a>
 	</p>
 		
 		<p class="selfIntroduction">
@@ -105,7 +105,7 @@
 			<li>
 				<h3>HTML5&amp;CSS3</h3>
 				<div class="progressBar">
-					<div class="progress">
+					<div class="progress" style="width: 40%;">
 						
 					</div>
 				</div>
@@ -114,7 +114,7 @@
 			<li>
 				<h3>Javascript</h3>
 				<div class="progressBar">
-					<div class="progress">
+					<div class="progress" style="width: 80%;">
 						
 					</div>
 				</div>
@@ -158,24 +158,44 @@
 		</ol>
 	</section>
 
-	<section>
+	<section class="portfolio">
 		<h2>作品集</h2>
 		<nav>
-			<ol>
-				<li>所有</li>
-				<li>框架</li>
-				<li>原生</li>
+			<ol class="clearFix">
+				<li id="portfolioAll">所有</li>
+				<li id="portfolioFramework">框架</li>
+				<li id="portfolioVallina">原生</li>
 			</ol>
+			<div id="portfolioBar" class="bar state-2">
+				<div class="barInner"></div>
+			</div>
 		</nav>
-		<div class="jobs">
-			<div class="big"></div>
-			<div class="small"></div>
-			<div class="small"></div>
+
+
+		<script >
+		portfolioAll.onclick=function()
+		{
+			portfolioBar.className = 'bar state-1';
+		}
+		portfolioFramework.onclick=function()
+		{
+			portfolioBar.className = 'bar state-2';
+		}
+		portfolioVallina.onclick=function()
+		{
+			portfolioBar.className = 'bar state-3';
+		}
+	</script>
+
+		<div class="works" style="height: 597px;">
+			<div class="big" style="top:0;left:0;"><img src="./img/1.jpg" alt="作品1"></div>
+			<div class="small" style="top:0;left:631px;"><img src="./img/2.jpg" alt="作品2"></div>
+			<div class="small" style="top:312px;left:631px;"><img src="./img/3.jpg" alt="作品3">></div>
 		</div>
 		
 	</section>
 
  
-
+	
 </body>
 </html>

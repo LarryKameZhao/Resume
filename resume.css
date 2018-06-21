@@ -259,7 +259,8 @@ body>main .resumeWrapper
 	font-size: 18px;
 }
 
-section.skills
+section.skills,
+section.portfolio
 {
 	max-width: 940px;
 	margin-left: auto;
@@ -267,7 +268,8 @@ section.skills
 	margin-top: 60px;
 }
 
-section.skills>h2
+section.skills>h2,
+section.portfolio>h2
 {
 	text-align: center;
 	color: #3d4451;
@@ -288,14 +290,21 @@ section.skills h3
 	background: white;
 	box-shadow: 0px 4px 14px 0px rgba(0,0,0,0.5);
 	padding: 42px 50px 10px;
+	margin-top: 30px;
 }
 
 section.skills>ol>li
 {
+	
 	float: left;
-	width: 50%;
+	width: 48%;
+	box-sizing: border-box
 }
-
+section.skills >ol>li:nth-child(even)
+{
+	
+	float: right;
+}
 section.skills  .progressBar 
 {
 	height: 5px;
@@ -310,4 +319,85 @@ section.skills .progressBar .progress
 	width: 70%;
 	background: #E6686A;
 	border-radius: 2px;
+}
+
+section.portfolio
+{
+	text-align: center;
+	margin-bottom: 150px;
+}
+
+section.portfolio >nav
+{
+	text-align: center;
+	display: inline-block;
+	vertical-align: top;
+}
+
+section.portfolio >nav >ol{
+	
+	border: 2px solid red;
+	display: inline-block;
+	vertical-align: top;
+}
+section.portfolio >nav >ol>li{
+	float: left;
+	margin-left: 40px;
+	cursor: pointer;
+
+}
+section.portfolio >nav >ol>li:nth-child(1)
+{
+	margin-left: 0;
+}
+
+section.portfolio>nav .bar
+{
+	height: 10px;
+	background: white;
+	margin-top: 5px;
+	margin-bottom: 30px;
+	border-radius: 2px;
+
+}
+section.portfolio>nav .barInner
+{
+	height: 100%;
+	background: #E6686A;
+	width: 20%;
+	border-radius: 2px;
+	transition: all 0.3s;
+
+}
+
+section.portfolio>nav .bar.state-1 .barInner
+{
+	margin-left: 0;
+	width: 20px;
+	
+}
+
+section.portfolio>nav .bar.state-2 .barInner
+{
+	margin-left: 95px;
+	width: 30px;
+	
+}
+section.portfolio>nav .bar.state-3 .barInner
+{
+	margin-left: 120px;
+	width: 40px;
+}
+
+section.portfolio .works
+{
+	position: relative;
+	
+}
+
+section.portfolio .works .big,
+section.portfolio .works .small
+{
+	position: absolute;
+	
 }
