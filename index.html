@@ -4,7 +4,6 @@
 	<title>赵嘉未的个人简历</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="./main.css">
-	
 	<script src="//at.alicdn.com/t/font_713100_yuzxk3gwr5.js"></script>
 
 	<style type="text/css">
@@ -257,8 +256,11 @@
 		</div>
 		
 	</section>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
+
 
 	<script>
+
 		 setTimeout(function(){
 			siteWelcome.classList.remove('active');
 		 },800);
@@ -285,15 +287,33 @@
 		 }
 		
 		let aTags = document.querySelectorAll('nav.menu>ul>li>a');
-		console.log(aTags);
+		
+
 		for(let i=0;i<aTags.length;i++){
 			aTags[i].onclick = function(x){
 				x.preventDefault();
 				let a = x.currentTarget;
 				let href = a.getAttribute('href');
 				let element = document.querySelector(href);
-				let top = element.offsetTop
-				window.scrollTo(0,top-80);
+				let top = element.offsetTop;
+				let currentTop = window.scrollY;
+				let targetTop = top-80;
+				let s = targetTop-currentTop;
+				function animate(time){
+			 requestAnimationFrame(animate);
+			 TWEEN.update(time);
+		 		}
+		 	requestAnimationFrame(animate);
+		 	var coords ={y:currentTop};
+			 var t = Math.abs((s/100)*300);
+			 if(t>500){t=500;}
+		 	var tween = new TWEEN.Tween(coords)
+		 	.to({y:targetTop},t)
+			.easing(TWEEN.Easing.Quadratic.InOut)
+			.onUpdate(function(){
+				window.scrollTo(0,coords.y);
+			}).start();
+				
 			}
 		}
 		
