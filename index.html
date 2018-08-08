@@ -6,6 +6,7 @@
 	
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/css/swiper.min.css">	<script src="//at.alicdn.com/t/font_713100_yuzxk3gwr5.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.1.0/js/swiper.min.js"></script>
+	<script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.9.0/dist/av-min.js"></script>
 	<link rel="stylesheet" type="text/css" href="./main.css">
 	<style type="text/css">
 
@@ -286,34 +287,22 @@
 		</div>
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
-		
-		<script>
-			var mySwiper = new Swiper ('.swiper-container', {
-			// Optional parameters
-			// direction: 'vertical',
-			loop: true,
-
-			// If we need pagination
-			pagination: {
-			el: '.swiper-pagination',
-			},
-
-			// Navigation arrows
-			navigation: {
-			nextEl: '.swiper-button-next',
-			prevEl: '.swiper-button-prev',
-			},
-
-			// And if we need scrollbar
-			// scrollbar: {
-			// el: '.swiper-scrollbar',
-			// },
-		})
-
-		</script>
+	
 	</section>
+	<section class="message">
+		<h2>留言</h2>
+		<ol id="messageList"></ol>
+		<form id="postMessageForm" style="width:700px;margin:50px auto">
+			<label >姓名</label>
+			<input type="text" name="name">
+			<label>内容</label>
+			<input type="text" name="content">
+			<input type="submit" value="提交">
+		</form>
+	</section>
+	<script src="./js/init-swiper.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.2.0/Tween.min.js"></script>
-
+	<script src="./js/message.js"></script>
 
 	<script>
  		// setTimeout(function(){
@@ -326,22 +315,23 @@
 		}
 
 		
-
-		 setTimeout(function(){
-			 animateDiv();
-		 },0);
-
-		 window.onscroll = function(event){
-			 if(window.scrollY>0){
+		//  setTimeout(function(){
+		// 	 animateDiv();
+		//  },0);
+		animateDiv();
+		
+		 window.addEventListener('scroll',function(x){
+			 animateDiv()
+		 });
+		 window.addEventListener('scroll',function(x){
+			if(window.scrollY>0){
 				 topNavBar.classList.add('sticky');
 			 }
 			 else{
 				 topNavBar.classList.remove('sticky');
 			 }
-			
-			 animateDiv();
-			 
-		 }
+		 });
+
 		function animateDiv(){
 			let specialTags = document.querySelectorAll('[data-x]');
 			 let minIndex = 0;
@@ -360,7 +350,7 @@
 			 //minIndex就是离窗口顶部最近的元素
 			 specialTags[minIndex].classList.remove('offset');
 			 let id = specialTags[minIndex].id;
-			 console.log(id);
+			 //console.log(id);
 			 let a = document.querySelector('a[href="#'+id+'"]');
 			 let li = a.parentNode;
 			 let brothersAndMe = li.parentNode.children;
